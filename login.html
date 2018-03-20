@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			input{
+				width: 20%;
+				height: 30px;
+			}
+		</style>
+		<script type="text/javascript">
+			function foo() {
+
+				if(myform.name.value == "") {
+					alert("请输入用户名");
+					myform.name.focus();
+					return false;
+				}
+				if(myform.pwd.value == "") {
+					alert("请输入密码");
+					myform.pwd.focus();
+					return false;
+				}
+				if(myform.yzm.value == "") {
+					alert("请输入验证码");
+					myform.yzm.focus();
+					return false;
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<form action="login.php" method="post" onsubmit="return foo()" name="myform">
+			<div id="loginBoard" align="center" style="margin-top: 200px;">
+				<p style="font-size: 1.5em;">用户登录</p>
+
+				<input type="text" id="name" name="name" placeholder="用户名" />
+				<br/>
+				<input type="password" id="pwd" name="pwd" placeholder="密码" />
+				<br/>
+				<input type="text" id="yzm" name="yzm" placeholder="验证码" />
+				<br/>
+				<img src="yanzhengma.php" onClick="this.src='yanzhengma.php?nocache='+Math.random()" id="codeimg" style="cursor:hand">
+				<br/>
+				<input type="checkbox" name="remember" value="yes" style="width: auto;height: auto;" />7天内自动登录
+				<br/>
+				<input type="submit" class="button" name="login" value="登录" />
+				<br/>
+				<input type="button" id="register" onclick="window.location.href='reg.html'" value="注册" />
+				<br/>
+
+			</div>
+		</form>
+
+	</body>
+
+</html>
